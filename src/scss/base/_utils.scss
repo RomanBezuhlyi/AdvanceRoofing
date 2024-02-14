@@ -1,0 +1,101 @@
+.none {
+  display: none;
+}
+.no-scroll {
+  overflow-y: hidden;
+}
+.btn-call {
+  @include flex(row, center, center);
+  gap: 10px;
+  color: $white;
+  font-weight: 700;
+  line-height: 130%;
+  text-transform: uppercase;
+  padding: 12px 25px;
+  background-color: $accent;
+  border: 2px solid $accent;
+  &:hover {
+    box-shadow: $shadow;
+  }
+  &:active {
+    font-weight: 900;
+    box-shadow: $shadow;
+  }
+}
+
+.btn-calc-outline {
+  @include flex(row, center, center);
+  gap: 10px;
+  color: $accent;
+  font-weight: 700;
+  line-height: 130%;
+  text-transform: uppercase;
+  padding: 12px 25px;
+  background-color: transparent;
+  border: 2px solid $accent;
+  &:hover {
+    color: $white;
+    background-color: $accent;
+    box-shadow: $shadow;
+  }
+  &:active {
+    color: $white;
+    font-weight: 900;
+    background-color: $accent;
+    box-shadow: $shadow;
+  }
+}
+
+.btn-calc-primary {
+  @include flex(row, center, center);
+  gap: 10px;
+  color: $white;
+  font-weight: 700;
+  line-height: 130%;
+  text-transform: uppercase;
+  padding: 12px 25px;
+  background-color: transparent;
+  border: 2px solid $accent;
+  &:hover {
+    box-shadow: $shadow;
+  }
+  &:active {
+    font-weight: 900;
+    box-shadow: $shadow;
+  }
+}
+
+.btn-dark {
+  @include flex(row, center, center);
+  gap: 10px;
+  color: $white;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: $white;
+  padding: 10px;
+  background: $text;
+  border: 2px solid $text;
+  &:hover {
+    color: $accent;
+  }
+  &:active {
+    font-weight: 900;
+    color: $accent;
+  }
+}
+
+.link {
+  line-height: 130%;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  &:hover {
+    color: $accent;
+  }
+  &:active {
+    font-weight: 700;
+    color: $accent;
+  }
+}
