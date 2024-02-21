@@ -1,8 +1,14 @@
 .none {
   display: none;
 }
+.show {
+  display: block !important;
+}
 .no-scroll {
   overflow-y: hidden;
+}
+.open {
+  top: 0 !important;
 }
 .btn-call {
   @include flex(row, center, center);

@@ -1,0 +1,269 @@
+.header-wrap {
+  position: relative;
+  padding: 15px 0;
+  background: $white;
+  box-shadow: $shadow;
+  @media (max-width: 1440px) {
+    padding: 12px 0;
+  }
+  @media (max-width: 1200px) {
+    padding: 14px 0;
+  }
+  @media (max-width: 991px) {
+    padding: 15px 0;
+  }
+}
+.header {
+  @include flex(row, space-between, center);
+  gap: 10px;
+  &__logo {
+    width: 126px;
+    height: 66px;
+    object-fit: cover;
+    @media (max-width: 1200px) {
+      width: 100px;
+      height: 52.381px;
+    }
+    @media (max-width: 991px) {
+      width: 115px;
+      height: 60.238px;
+    }
+  }
+  &__nav {
+    position: relative;
+    @include flex(row, center, center);
+    gap: 35px;
+    @media (max-width: 1440px) {
+      gap: 25px;
+    }
+    @media (max-width: 1200px) {
+      gap: 20px;
+    }
+    @media (max-width: 991px) {
+      position: absolute;
+      top: -100vh;
+      left: 0;
+      width: 100%;
+      height: 50vh;
+      padding: 120px 17px 32px 39px;
+      @include flex(column, flex-start, center);
+      gap: 15px;
+      background: $accent;
+      box-shadow: $shadow;
+      @include transition;
+    }
+    @media (max-width: 768px) {
+      align-items: center;
+      height: 75vh;
+    }
+    @media (max-width: 576px) {
+      align-items: center;
+      height: 100vh;
+    }
+    &-close {
+      @include flex(row, center, center);
+      position: absolute;
+      top: 32px;
+      right: 17px;
+      z-index: 6;
+    }
+    &-wrap {
+      position: relative;
+      @media (max-width: 991px) {
+        position: static;
+        width: 200px;
+      }
+      @media (max-width: 576px) {
+        width: 100%;
+        padding-right: 80px;
+      }
+      &:hover {
+        .header__nav-drop {
+          display: block;
+        }
+      }
+    }
+    &-drop {
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: -10px;
+      width: 272px;
+      height: auto;
+      padding-top: 20px;
+      @media (max-width: 991px) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover {
+        display: block;
+      }
+    }
+    &-dropdown {
+      padding: 18px 13px 20px 21px;
+      color: $white;
+      background: $accent;
+      box-shadow: $shadow;
+      @media (max-width: 991px) {
+        padding: 90px 13px 20px 30px;
+        box-shadow: none;
+        height: 100%;
+      }
+    }
+    &-list {
+      width: 100%;
+      @include flex(column, flex-start, flex-start);
+      gap: 10px;
+    }
+    &-more {
+      display: block;
+      margin-top: 32px;
+      font-weight: 700;
+      line-height: 130%;
+      text-decoration-line: underline;
+      text-transform: uppercase;
+      @include transition;
+      &:hover {
+        color: $text;
+      }
+    }
+    &-dropdown--top {
+      display: none;
+      gap: 88px;
+      position: absolute;
+      top: 32px;
+      left: 27px;
+      @media (max-width: 991px) {
+        @include flex(row, flex-start, center);
+      }
+      .back {
+        @include flex(row, center, center);
+        &:hover {
+          .header__nav-drop {
+            display: none;
+          }
+        }
+      }
+      p {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 180%;
+      }
+    }
+    &-subitem {
+      width: 100%;
+      a {
+        width: 100%;
+        @include flex(row, space-between, center);
+        font-weight: 500;
+        line-height: 180%;
+        @include transition;
+      }
+      &:hover {
+        a {
+          color: $text;
+        }
+      }
+    }
+    &-item {
+      @include flex(row, center, center);
+      gap: 5px;
+      font-weight: 500;
+      line-height: 180%;
+      @include transition;
+      @media (max-width: 991px) {
+        justify-content: space-between;
+        width: 200px;
+        color: $white;
+        font-size: 16px;
+      }
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+      & img.desktop {
+        display: block;
+        @media (max-width: 991px) {
+          display: none;
+        }
+      }
+      & img.mobile {
+        display: none;
+        @media (max-width: 991px) {
+          display: block;
+        }
+      }
+    }
+    &-item:hover {
+      color: $accent;
+      @media (max-width: 991px) {
+        color: $text;
+      }
+    }
+    &-item.active {
+      font-weight: 700;
+      color: $accent;
+      @media (max-width: 991px) {
+        color: $white;
+      }
+    }
+  }
+  &__right {
+    @include flex(row, flex-end, center);
+    gap: 50px;
+  }
+  &__num {
+    @include flex(row, center, center);
+    gap: 12px;
+    font-weight: 500;
+    line-height: 180%;
+    @include transition;
+    &:hover {
+      color: $accent;
+    }
+    &-icon-1 {
+      display: block;
+      @media (max-width: 1200px) {
+        display: none;
+      }
+      @media (max-width: 991px) {
+        display: block;
+      }
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+    & span {
+      display: block;
+      @media (max-width: 1200px) {
+        display: none;
+      }
+      @media (max-width: 991px) {
+        display: block;
+      }
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+    &-icon-2 {
+      display: none;
+      @media (max-width: 1200px) {
+        display: block;
+      }
+      @media (max-width: 991px) {
+        display: none;
+      }
+      @media (max-width: 576px) {
+        display: block;
+      }
+    }
+  }
+  &__burger {
+    display: none;
+    @media (max-width: 991px) {
+      @include flex(row, center, center);
+    }
+  }
+}
