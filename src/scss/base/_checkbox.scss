@@ -1,0 +1,49 @@
+.custom-checkbox {
+  position: relative;
+  width: 418px;
+  @include flex(row, flex-start, flex-start);
+  margin-bottom: 20px;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.hidden-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.custom-label {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid $text;
+}
+
+.custom-label:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 30%;
+  width: 3px;
+  height: 6px;
+  border: solid $text;
+  border-width: 0 1px 1px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hidden-checkbox:checked + .custom-label:after {
+  display: block;
+}
+
+.label-text {
+  display: block;
+  margin-left: 20px;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 130%;
+}
